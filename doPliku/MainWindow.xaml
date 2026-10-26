@@ -1,0 +1,134 @@
+﻿<Window x:Class="doPliku.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:doPliku"
+        mc:Ignorable="d"
+        Title="Ankieta"
+        Height="510"
+        Width="360"
+        WindowStartupLocation="CenterScreen"
+        Background="#F1F5F9">
+
+    <Canvas Margin="0,0,0,62">
+
+        <Border Canvas.Left="15"
+                Canvas.Top="15"
+                Width="314"
+                Height="461"
+                Background="White"
+                CornerRadius="15"
+                Padding="20" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+            <Canvas Margin="0,0,0,41">
+
+                <!-- Tytuł -->
+                <TextBlock Text="ANKIETA"
+                           Canvas.Left="70"
+                           Canvas.Top="-14"
+                           FontSize="32"
+                           FontWeight="Bold"
+                           Foreground="#334155" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                <!-- Płeć -->
+                <TextBlock Text="Płeć"
+                           Canvas.Left="117"
+                           Canvas.Top="48"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="#334155"/>
+
+                <RadioButton x:Name="MaleRadio"
+                             Content="Mężczyzna"
+                             GroupName="Gender"
+                             IsChecked="True"
+                             FontSize="16"
+                             Canvas.Left="89"
+                             Canvas.Top="80"/>
+
+                <RadioButton x:Name="FemaleRadio"
+                             Content="Kobieta"
+                             GroupName="Gender"
+                             FontSize="16"
+                             Canvas.Left="101"
+                             Canvas.Top="100" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <RadioButton x:Name="OtherRadio"
+                             Content="Inny"
+                             GroupName="Gender"
+                             FontSize="16"
+                             Canvas.Left="112"
+                             Canvas.Top="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                <!-- Wiek -->
+                <TextBlock Text="Wiek (1–100)"
+                           Canvas.Left="74"
+                           Canvas.Top="145"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="#334155" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <TextBox x:Name="AgeTextBox"
+                         Canvas.Left="62"
+                         Canvas.Top="177"
+                         Width="150"
+                         Height="35"
+                         FontSize="16"
+                         Padding="6"
+                         MaxLength="3"
+                         Text="18"
+                         PreviewTextInput="AgeTextBox_PreviewTextInput"
+                         DataObject.Pasting="AgeTextBox_Pasting"/>
+
+                <!-- Kolor -->
+                <TextBlock Text="Ulubiony kolor"
+                           Canvas.Left="67"
+                           Canvas.Top="217"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="#334155"/>
+
+                <ComboBox x:Name="ColorComboBox"
+                          Canvas.Left="37"
+                          Canvas.Top="249"
+                          Width="200"
+                          Height="35"
+                          FontSize="16"
+                          SelectedIndex="0">
+                    <ComboBoxItem Content="Niebieski"/>
+                    <ComboBoxItem Content="Czerwony"/>
+                    <ComboBoxItem Content="Zielony"/>
+                    <ComboBoxItem Content="Żółty"/>
+                    <ComboBoxItem Content="Fioletowy"/>
+                    <ComboBoxItem Content="Czarny"/>
+                    <ComboBoxItem Content="Biały"/>
+                </ComboBox>
+
+                <!-- Zgoda -->
+                <CheckBox x:Name="ConsentCheckBox"
+                          Content="Akceptuję warunki i wyrażam zgodę"
+                          Canvas.Left="32"
+                          Canvas.Top="302"
+                          FontSize="12"
+                          Foreground="#334155"/>
+
+                <!-- Przycisk -->
+                <Button Content="ZATWIERDŹ"
+                        Canvas.Left="37"
+                        Canvas.Top="352"
+                        Width="200"
+                        Height="42"
+                        Background="#4F46E5"
+                        Foreground="White"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="SaveButton_Click"/>
+
+            </Canvas>
+        </Border>
+
+    </Canvas>
+</Window>
